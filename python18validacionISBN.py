@@ -1,4 +1,3 @@
-print("Practica Validacion ISBN")
 print("Introduzca el ISBN")
 isbn= input() 
 if (isbn.isdigit() and len(isbn)==10):
