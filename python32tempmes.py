@@ -29,8 +29,15 @@ print("=========================================================================
 print (mes2)
 media = mes2.gettempMedia()
 print("La temperatura media en el mes de", mes2.nombre, "fué de", media,"ºC")
+print("_______________________________________________________________________________")
+print("                                                                                ")
 
 #ahora quiero que lo haga para todos los meses
 meses =("enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "dicimebre")
+tmax=0
+tmin=0
+
 for nombreMes in meses:
-    print(nombreMes)
+    tmax = random.randint(10,20)
+    tmin = random.randint(-5,6) 
+    print("La temperatura máxima en el mes de",nombreMes,"fué de",tmax ,"ºC, ", "la mínima fué de",tmin ,"ºC y la media fué de", (tmax+tmin)/2)
