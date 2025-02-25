@@ -2,13 +2,13 @@ import oracledb
 connection=oracledb.connect(user='system', password='oracle', dsn='localhost/xe')
 
 print ("-----------EMPLEADOS TURNO-----------")
-selecturno="select distinct turno from plantilla"
+selecturno="select distinct turno, case turno when 'T' then 'Tarde' when 'M' then 'Mañana' else 'Noche' end as valor from plantilla"
 cursor=connection.cursor()
 cursor.execute(selecturno)
 cont=1
 listaturnos=[]
 for row in cursor:
-    print(f"{cont} = {row[0]}")
+    print(f"{cont} = {row[1]}")
     listaturnos.append(row[0])
     cont=cont+1
 cursor.close
